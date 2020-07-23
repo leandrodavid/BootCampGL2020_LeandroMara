@@ -1,5 +1,7 @@
 package com.globallogic.clasesobjetos;
 
+import java.util.regex.Pattern;
+
 class Empleado extends Persona{
 	private static int importePorHora;
 	private String id;
@@ -7,7 +9,7 @@ class Empleado extends Persona{
 	private double sueldoBase;
 	private int horasExtrasMes;
 	private double irpf; 
-	private boolean casado;
+	private char casado;
 	private int cantHijos;
 	
 	public Empleado() {
@@ -70,13 +72,18 @@ class Empleado extends Persona{
 		this.irpf = irpf;
 	}
 
-
-	public boolean isCasado() {
+    public boolean isCasado(char casado) {
+    	if (casado=='S' ||casado=='s') 
+    		return true;
+    	return false;			
+    }
+	
+	public char getCasado() {
 		return casado;
 	}
 
 
-	public void setCasado(boolean casado) {
+	public void setCasado(char casado) {
 		this.casado = casado;
 	}
 
@@ -107,7 +114,7 @@ class Empleado extends Persona{
 	
 	public double calcularRetencionesIRPF() {
 		double irpfAux=(this.getIrpf()-this.getCantHijos())*0.01;
-		if (this.isCasado()) {
+		if (this.isCasado(this.casado)) {
 			return this.calcularSueldoBruto() * (irpfAux-0.02);
 		}
 		else
@@ -117,7 +124,7 @@ class Empleado extends Persona{
 	@Override
 	public String toString() {
 		String casadoSN;
-		if (this.isCasado())
+		if (this.isCasado(this.casado))
 			casadoSN="S";
 		else
 			casadoSN="N";

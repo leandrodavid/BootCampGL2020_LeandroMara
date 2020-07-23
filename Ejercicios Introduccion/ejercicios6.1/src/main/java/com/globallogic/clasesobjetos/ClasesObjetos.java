@@ -47,6 +47,7 @@ public class ClasesObjetos
         System.out.println("El Empleado ordenados por menor sueldo :");
         for(Empleado emp: listaEmpleados) {
         	System.out.println(emp.toString());
+        	
         }
     }
     
@@ -94,7 +95,11 @@ public class ClasesObjetos
     	System.out.println("\n");
     	System.out.println("Ingrese la cantidad de hijos del Empleado");
     	empleado.setCantHijos(scanner.nextInt());
-    	empleado.setCasado(true);
+    	  	
+    	System.out.println("\n");
+    	System.out.println("Ingrese S/s(si) o N/n(no) si el Empleado esta casado");
+    	empleado.setCasado(scanner.next().charAt(0));
+    	
     	listaEmpleados.add(empleado);
     }
     
@@ -108,11 +113,11 @@ class OrdenarMenorSueldo implements Comparator<Empleado> {
 
     @Override
     public int compare(Empleado e1, Empleado e2) {
-        if (e2.calcularSueldoBruto() < e1.calcularSueldoBruto())
+        if ((e2.calcularSueldoBruto()-e2.calcularRetencionesIRPF()) < (e1.calcularSueldoBruto()-e1.calcularRetencionesIRPF()))
          {
              return 1;
          }
-        else if (e2.calcularSueldoBruto() > e1.calcularSueldoBruto())
+        else if ((e2.calcularSueldoBruto()-e2.calcularRetencionesIRPF()) > (e1.calcularSueldoBruto()-e1.calcularRetencionesIRPF()))
         {
             return -1;
         }
