@@ -10,12 +10,13 @@ import java.util.Scanner;
 public class ClasesObjetos 
 {
 	static Scanner scanner = new Scanner(System.in);
-	static List<Empleado> listaEmpleados= new ArrayList<Empleado>();
 	
+	static List<Empleado> listaEmpleados;
     public static void main( String[] args )
     {
         
         int cantPersona=cargarCantPersonas();
+        listaEmpleados= new ArrayList<Empleado>(cantPersona);
         for(int i=0;i<cantPersona;i++) {
         	cargarDatosEmpleado();
         }
