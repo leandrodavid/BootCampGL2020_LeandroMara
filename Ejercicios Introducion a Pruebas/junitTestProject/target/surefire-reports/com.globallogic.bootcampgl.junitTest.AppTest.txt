@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.globallogic.bootcampgl.junitTest.AppTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.211 sec <<< FAILURE! - in com.globallogic.bootcampgl.junitTest.AppTest
+testVariablesStringModificado()  Time elapsed: 0.047 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Hola> but was: <que>
+	at com.globallogic.bootcampgl.junitTest.AppTest.testVariablesStringModificado(AppTest.java:56)
+
+testBooleanModificado()  Time elapsed: 0.007 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
+	at com.globallogic.bootcampgl.junitTest.AppTest.testBooleanModificado(AppTest.java:65)
+
+testLongModificado()  Time elapsed: 0 sec  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: not <null>
+	at com.globallogic.bootcampgl.junitTest.AppTest.testLongModificado(AppTest.java:73)
+
