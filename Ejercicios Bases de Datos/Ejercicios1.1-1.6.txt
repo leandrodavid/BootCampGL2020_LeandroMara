@@ -1,0 +1,12 @@
+Ejercicios ralizados en Workbench
+
+USE BOOTCAMP;
+select  * FROM ANIMALS ORDER BY CAST(id AS decimal) desc;
+
+select * FROM ANIMALS WHERE WEIGHT > 30 ORDER BY CAST(id AS decimal);
+
+select * FROM ANIMALS WHERE name Like 'L%' ORDER BY CAST(id AS decimal);
+
+select  species,id,name FROM ANIMALS GROUP BY species,name order by species,CAST(id AS decimal) desc;
+
+select  name,species,weight FROM ANIMALS where WEIGHT > 100 GROUP BY species,name order by CAST(id AS decimal) desc;
